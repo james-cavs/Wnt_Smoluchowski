@@ -1,1 +1,5 @@
-#Wnt_Smoluchowski
+The main file here to change is "Wnt_Smoluchowski_Trimolecular_Script.m"
+This is the input file where you define reaction rate constants, initial concentrations, length of time to run the simulation, the timestep, diffusion constants, and volume.
+The other files are functions each with one particular focus. Some of these will cover reactions, diffusion, and some are computational functions to find the Smoluchowski radius based on the timestep selected. There are a few functions to do with "boxes". These implement a similar algorithm to what is used in Smoldyn. This is where the domain is broken up into a large number of boxes, each of which is slightly larger than the reaction radius. Therefore to find molecules that could react, you only need to check the closest 27 boxes around one molecule. This significantly decreases the computational time.
+
+NOTE: The simulation can take a few days to run. We are open to receiving any tips on how to rewrite our algorithms to speed up the computational time. Alternatively, the code could be converted such that it can run on a cluster.
